@@ -1,12 +1,32 @@
 import "./Header.scss";
-import { Button } from "antd";
+import { Layout, Menu } from "antd";
+const { Header: NavBar } = Layout;
+
+
+const menuItems = [
+  {
+    key: "/login",
+    label: "Login",
+  },
+  {
+    key: "/",
+    label: "Home",
+  }
+
+];
 
 const Header = () => {
-  return(
+  return (
     <header className="blog-header">
-      <nav>
-        <Button type="primary">Button Exampale</Button>
-      </nav>
+      <NavBar className="navbar">
+        {/* <div className="demo-logo" /> */}
+        <span>BlogApp</span>
+        <Menu
+          theme="light"
+          mode="horizontal"
+          items={menuItems}
+        />
+      </NavBar>
     </header>
   );
 };

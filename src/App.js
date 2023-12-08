@@ -6,11 +6,12 @@ import {
   Link,
 } from "react-router-dom";
 import Header from './components/Header/Header';
+import Login from './continers/Login/Login';
 
 const routesConfig = [
   {
     path: "/",
-    element: <h1>Home Page</h1>
+    element: <Login/>
   },
   {
     path: "/register",
@@ -23,12 +24,12 @@ const routes = createBrowserRouter(routesConfig);
 
 function App() {
   return (
-    <RouterProvider router={routes}>
-  <div className="App">
-    <Header />
-    {/* Other route components go here */}
-  </div>
-</RouterProvider>
+    <>
+      <div className="App">
+        <Header />
+        <RouterProvider router={routes} />
+      </div>
+    </>
   );
 }
 
